@@ -1,0 +1,1272 @@
+{
+	"info": {
+		"_postman_id": "ad862540-ee28-4db2-b3a2-096450d28080",
+		"name": "Ambiente Dev",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "01 - Solicitar Token de Acceso",
+					"_postman_id": "38c5e3b4-0a57-4192-8d04-dae528231f5b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "12345",
+								"username": "kalum-app"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "mgodinez@kalum.edu.gt",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								}
+							],
+							"options": {
+								"urlencoded": {}
+							}
+						},
+						"url": "http://localhost:9000/oauth/token"
+					},
+					"response": []
+				},
+				{
+					"name": "02 - Listar Usuarios",
+					"_postman_id": "29a9f50f-3a64-4af4-96c0-6b9e8425f968",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGVsbGlkb3MiOiJHb2RpbmV6IiwidXNlcl9uYW1lIjoibWdvZGluZXpAa2FsdW0uZWR1Lmd0Iiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImV4cCI6MTY2ODg5NDg4MywiYXV0aG9yaXRpZXMiOlsiUk9MRV9BRE1JTiJdLCJqdGkiOiI0ZDUzZDg3YS1hMTg2LTRhY2QtYWZhOS1hNDU3YTQ1OTkxMjciLCJlbWFpbCI6Im1nb2RpbmV6QGdtYWlsLmNvbSIsImNsaWVudF9pZCI6ImthbHVtLWFwcCIsIm5vbWJyZXMiOiJtYXJpYSJ9.SEQAF-_lbA2yKQv4u1OdwpRXG1lN3y9qPZO80Ar3Sds"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9000/kalum-management/v1/usuarios/page/2"
+					},
+					"response": []
+				},
+				{
+					"name": "03 - Consultar Usuario por Id",
+					"_postman_id": "12c014e9-2830-4463-97d2-ccf1bcc0beb9",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGVsbGlkb3MiOiJHb2RpbmV6IiwidXNlcl9uYW1lIjoibWdvZGluZXpAa2FsdW0uZWR1Lmd0Iiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImV4cCI6MTY2ODY2MTQyMCwiYXV0aG9yaXRpZXMiOlsiUk9MRV9BRE1JTiJdLCJqdGkiOiI1MTNiNmIxMy1hNmEwLTRiNzgtOGJlMy04OTJmMDBjOTczMGIiLCJlbWFpbCI6Im1nb2RpbmV6QGdtYWlsLmNvbSIsImNsaWVudF9pZCI6ImthbHVtLWFwcCIsIm5vbWJyZXMiOiJtYXJpYSJ9.qNnrvqPc971GVxLPPMJprIIPLhecjBz4Ytt217jKfus"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9000/kalum-management/v1/usuarios/2"
+					},
+					"response": []
+				},
+				{
+					"name": "04 - Consultar Usuario email",
+					"_postman_id": "97061412-ca6e-4157-941e-dfe24e3a978e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGVsbGlkb3MiOiJHb2RpbmV6IiwidXNlcl9uYW1lIjoibWdvZGluZXpAa2FsdW0uZWR1Lmd0Iiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImV4cCI6MTY2ODY2MTQyMCwiYXV0aG9yaXRpZXMiOlsiUk9MRV9BRE1JTiJdLCJqdGkiOiI1MTNiNmIxMy1hNmEwLTRiNzgtOGJlMy04OTJmMDBjOTczMGIiLCJlbWFpbCI6Im1nb2RpbmV6QGdtYWlsLmNvbSIsImNsaWVudF9pZCI6ImthbHVtLWFwcCIsIm5vbWJyZXMiOiJtYXJpYSJ9.qNnrvqPc971GVxLPPMJprIIPLhecjBz4Ytt217jKfus"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/kalum-management/v1/usuarios/search?email=mgodinez@gmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"kalum-management",
+								"v1",
+								"usuarios",
+								"search"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "mgodinez@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "05 - Agregar Un Usuario Nuevo",
+					"_postman_id": "3b79b355-2ec4-4298-b055-f8cc80ece99d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"Ngodinez@kalum.edu.gt\",\r\n    \"password\": \"Inicio.2022\",\r\n    \"nombres\": \"Alberto\",\r\n    \"apellidos\": \"Lopez\",\r\n    \"email\": \"Nlopez@hotmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9000/kalum-management/v1/usuarios"
+					},
+					"response": []
+				},
+				{
+					"name": "06 - Modificar un Usuario",
+					"_postman_id": "e5e1550a-0cf7-4214-874b-6ebfdbe87919",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGVsbGlkb3MiOiJHb2RpbmV6IiwidXNlcl9uYW1lIjoibWdvZGluZXpAa2FsdW0uZWR1Lmd0Iiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImV4cCI6MTY2ODY2MTQyMCwiYXV0aG9yaXRpZXMiOlsiUk9MRV9BRE1JTiJdLCJqdGkiOiI1MTNiNmIxMy1hNmEwLTRiNzgtOGJlMy04OTJmMDBjOTczMGIiLCJlbWFpbCI6Im1nb2RpbmV6QGdtYWlsLmNvbSIsImNsaWVudF9pZCI6ImthbHVtLWFwcCIsIm5vbWJyZXMiOiJtYXJpYSJ9.qNnrvqPc971GVxLPPMJprIIPLhecjBz4Ytt217jKfus"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"ttgodinez@kalum.edu.gt\",\r\n    \"password\": \"Inicio.2022\",\r\n    \"nombres\": \"Alejandra\",\r\n    \"apellidos\": \"Godinez\",\r\n    \"email\": \"Alegodinez@outlook.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9000/kalum-management/v1/usuarios/5"
+					},
+					"response": []
+				},
+				{
+					"name": "07 - Eliminar Usuario por ID",
+					"_postman_id": "9d2c765f-0ad7-4ef0-9164-5a86ddf566f7",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGVsbGlkb3MiOiJHb2RpbmV6IiwidXNlcl9uYW1lIjoibWdvZGluZXpAa2FsdW0uZWR1Lmd0Iiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImV4cCI6MTY2ODY2MTQyMCwiYXV0aG9yaXRpZXMiOlsiUk9MRV9BRE1JTiJdLCJqdGkiOiI1MTNiNmIxMy1hNmEwLTRiNzgtOGJlMy04OTJmMDBjOTczMGIiLCJlbWFpbCI6Im1nb2RpbmV6QGdtYWlsLmNvbSIsImNsaWVudF9pZCI6ImthbHVtLWFwcCIsIm5vbWJyZXMiOiJtYXJpYSJ9.qNnrvqPc971GVxLPPMJprIIPLhecjBz4Ytt217jKfus"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:9000/kalum-management/v1/usuarios/3"
+					},
+					"response": []
+				},
+				{
+					"name": "08 - Actualizar Rol a un Usuario",
+					"_postman_id": "f79a30fd-0375-407b-af7b-6d4dde6eec09",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGVsbGlkb3MiOiJHb2RpbmV6IiwidXNlcl9uYW1lIjoibWdvZGluZXpAa2FsdW0uZWR1Lmd0Iiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImV4cCI6MTY2ODY2MTQyMCwiYXV0aG9yaXRpZXMiOlsiUk9MRV9BRE1JTiJdLCJqdGkiOiI1MTNiNmIxMy1hNmEwLTRiNzgtOGJlMy04OTJmMDBjOTczMGIiLCJlbWFpbCI6Im1nb2RpbmV6QGdtYWlsLmNvbSIsImNsaWVudF9pZCI6ImthbHVtLWFwcCIsIm5vbWJyZXMiOiJtYXJpYSJ9.qNnrvqPc971GVxLPPMJprIIPLhecjBz4Ytt217jKfus"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"lastRole\": 1,\r\n    \"updateRole\": 2\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9000/kalum-management/v1/usuarios/2"
+					},
+					"response": []
+				}
+			],
+			"_postman_id": "6ef02a1c-dd00-43fb-bbab-e1a067c7a1f3"
+		},
+		{
+			"name": "Carreras Tecnicas",
+			"item": [
+				{
+					"name": "01 - Listar Carreras Tecnicas",
+					"_postman_id": "ab2d2a06-a190-4684-ba44-84ec043e4577",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGVsbGlkb3MiOiJHb2RpbmV6IiwidXNlcl9uYW1lIjoibWdvZGluZXpAa2FsdW0uZWR1Lmd0Iiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImV4cCI6MTY3NjQzNjM4MCwiYXV0aG9yaXRpZXMiOlsiUk9MRV9BRE1JTiJdLCJqdGkiOiIyY2RhZDU1Zi1iOGE2LTQ3ODMtYTJjNC00ZDk1MDBmYTkyNGUiLCJlbWFpbCI6Im1nb2RpbmV6QGdtYWlsLmNvbSIsImNsaWVudF9pZCI6ImthbHVtLWFwcCIsIm5vbWJyZXMiOiJtYXJpYSJ9.v1MbmDQ6hZKlPXnE86KZzp8tkYaxnsOdurz08fYouUw"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9000/kalum-management/v1/carreras-tecnicas"
+					},
+					"response": []
+				},
+				{
+					"name": "02 - Buscar Carrera por Id",
+					"_postman_id": "c493778e-6255-4ee8-9b37-63f7fdef40b6",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGVsbGlkb3MiOiJHb2RpbmV6IiwidXNlcl9uYW1lIjoibWdvZGluZXoiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiZXhwIjoxNjU2OTc3NjM4LCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlOIl0sImp0aSI6IjQxMzk5YTRmLWZlMWUtNDFlMC1iZDM4LThlNjk3OGNlMzAxNiIsImVtYWlsIjoibWdvZGluZXpAZ21haWwuY29tIiwiY2xpZW50X2lkIjoia2FsdW0tYXBwIiwibm9tYnJlcyI6Im1hcmlhIn0.TTiSRVPvDhEHAK5LxPERRanmSawUh1LZxZgopShY-FU"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9000/kalum-management/v1/carreras-tecnicas/78c9619a-b55e-11ec-9105-0242ac110002"
+					},
+					"response": []
+				},
+				{
+					"name": "03 - Agregar una Nueva Carrera Tecnica",
+					"_postman_id": "9f1f74ee-29de-4e8f-97f5-d38d4164a8f1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGVsbGlkb3MiOiJHb2RpbmV6IiwidXNlcl9uYW1lIjoibWdvZGluZXpAa2FsdW0uZWR1Lmd0Iiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImV4cCI6MTY2OTg3NDU1MCwiYXV0aG9yaXRpZXMiOlsiUk9MRV9BRE1JTiJdLCJqdGkiOiI1NjlmNTViYy1hZGY4LTQzMTQtODBmOC1lZDUzNDFlYWY0MTYiLCJlbWFpbCI6Im1nb2RpbmV6QGdtYWlsLmNvbSIsImNsaWVudF9pZCI6ImthbHVtLWFwcCIsIm5vbWJyZXMiOiJtYXJpYSJ9.L-D2dhNY7MjpenJRinLb1MEfJZGoRlwz5KFRulJfo-Y"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"carreraTecnica\":\"Desarrollo de Aplicaciones Moviles 2022 \"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9000/kalum-management/v1/carreras-tecnicas"
+					},
+					"response": []
+				},
+				{
+					"name": "04 - Actualizar Carrera Tecnica",
+					"_postman_id": "05315243-a673-438d-8645-15aa9a911055",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGVsbGlkb3MiOiJHb2RpbmV6IiwidXNlcl9uYW1lIjoibWdvZGluZXpAa2FsdW0uZWR1Lmd0Iiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImV4cCI6MTY2OTg2NzI2MCwiYXV0aG9yaXRpZXMiOlsiUk9MRV9BRE1JTiJdLCJqdGkiOiI5YzdlMTA1OC1mMjlkLTQzNmItYTY2My00YTI0MzgwNmEyNDYiLCJlbWFpbCI6Im1nb2RpbmV6QGdtYWlsLmNvbSIsImNsaWVudF9pZCI6ImthbHVtLWFwcCIsIm5vbWJyZXMiOiJtYXJpYSJ9.h5wN6k3Ia8A3XYlQWYaalT_XK8HIP8e2qFgWQ9s0U9w"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"carreraTecnica\": \"DESARROLLO DE APLICACIONES WEB 2022 \"\r\n}\r\n\r\n ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9000/kalum-management/v1/carreras-tecnicas/d72f1c3a-b17a-4c4a-9577-2663d6befc4c"
+					},
+					"response": []
+				},
+				{
+					"name": "05 - Eliminar una Carrera Tecnica",
+					"_postman_id": "12e3a979-386c-4f41-9627-ed0f3c99242f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:9000/kalum-management/v1/carreras-tecnicas/f94d876f-c05b-47ed-b407-f48129ca2307"
+					},
+					"response": []
+				},
+				{
+					"name": "06 - Consultar Carrerar Tecnicas por Paginas",
+					"_postman_id": "b624a771-3599-4d46-a1ff-3535726ca8c3",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9000/kalum-management/v1/carreras-tecnicas/page/0"
+					},
+					"response": []
+				}
+			],
+			"_postman_id": "edb0f78d-ba37-4944-863b-d89ecd5af190"
+		},
+		{
+			"name": "Jornada",
+			"item": [
+				{
+					"name": "01 - Listar Jornadas",
+					"_postman_id": "e9267d88-a1f9-4958-a7fc-f38b9dc877a4",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGVsbGlkb3MiOiJHb2RpbmV6IiwidXNlcl9uYW1lIjoibWdvZGluZXpAa2FsdW0uZWR1Lmd0Iiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImV4cCI6MTY2OTg2OTU0OCwiYXV0aG9yaXRpZXMiOlsiUk9MRV9BRE1JTiJdLCJqdGkiOiI3MDlhOWM4Yy04MGFhLTRhYjItOGViMC04OTdhYTNjMTMxZTUiLCJlbWFpbCI6Im1nb2RpbmV6QGdtYWlsLmNvbSIsImNsaWVudF9pZCI6ImthbHVtLWFwcCIsIm5vbWJyZXMiOiJtYXJpYSJ9.fH1AFPS2qq8-3gr1ftW6ZLPuoPV1-9A62Ifmv6VcILI"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9000/kalum-management/v1/jornada"
+					},
+					"response": []
+				},
+				{
+					"name": "02 - Buscar Jornada por ID",
+					"_postman_id": "5c2f01f2-e2e4-4c98-a31e-8377892ebc3d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9000/kalum-management/v1/jornada/5ada1ded-b55e-11ec-9105-0242ac110002"
+					},
+					"response": []
+				},
+				{
+					"name": "03 - Paginar Jornadas",
+					"_postman_id": "93cf60f8-d75c-489c-860c-af737adcc0b5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGVsbGlkb3MiOiJHb2RpbmV6IiwidXNlcl9uYW1lIjoibWdvZGluZXoiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiZXhwIjoxNjU3MTY3MDAxLCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlOIl0sImp0aSI6ImVmZTViNDAxLWI2YzktNDhmMC04MzhjLWRkN2I5NWYyZDA0NCIsImVtYWlsIjoibWdvZGluZXpAZ21haWwuY29tIiwiY2xpZW50X2lkIjoia2FsdW0tYXBwIiwibm9tYnJlcyI6Im1hcmlhIn0.RmH47HKiQoa662qt8cF83sN7nDCRTV6DjpwxdNY9QHQ"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9000/kalum-management/v1/jornada/page/0"
+					},
+					"response": []
+				},
+				{
+					"name": "04 - Agregar Nueva Jornada",
+					"_postman_id": "5e730ec9-1d42-4b37-8da3-da9b8619e14c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGVsbGlkb3MiOiJHb2RpbmV6IiwidXNlcl9uYW1lIjoibWdvZGluZXoiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiZXhwIjoxNjU3MTY4MTcwLCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlOIl0sImp0aSI6ImYyZTZjNDc1LTUzMzktNDRhOS1hYTM0LWQxYWRjMjEwMzYzZiIsImVtYWlsIjoibWdvZGluZXpAZ21haWwuY29tIiwiY2xpZW50X2lkIjoia2FsdW0tYXBwIiwibm9tYnJlcyI6Im1hcmlhIn0.etNrNhtPsg5WhFD3AXy5CM7C611ym39iqyp-QzyP8yE"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"jornada\": \"DM\",\r\n    \"descripcion\": \"Jornada Domingo a Martes\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9000/kalum-management/v1/jornada"
+					},
+					"response": []
+				},
+				{
+					"name": "05 - Actualizar Jornada",
+					"_postman_id": "a5dc06b3-4bb0-4d50-867b-873559b36c64",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGVsbGlkb3MiOiJHb2RpbmV6IiwidXNlcl9uYW1lIjoibWdvZGluZXpAa2FsdW0uZWR1Lmd0Iiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImV4cCI6MTY2OTg2OTU0OCwiYXV0aG9yaXRpZXMiOlsiUk9MRV9BRE1JTiJdLCJqdGkiOiI3MDlhOWM4Yy04MGFhLTRhYjItOGViMC04OTdhYTNjMTMxZTUiLCJlbWFpbCI6Im1nb2RpbmV6QGdtYWlsLmNvbSIsImNsaWVudF9pZCI6ImthbHVtLWFwcCIsIm5vbWJyZXMiOiJtYXJpYSJ9.fH1AFPS2qq8-3gr1ftW6ZLPuoPV1-9A62Ifmv6VcILI"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"jornada\": \"VD\",\r\n        \"descripcion\": \" Matutina Viernes - Domingo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9000/kalum-management/v1/jornada/cf43e278-f136-47b2-a3dc-0f6a865b1460"
+					},
+					"response": []
+				},
+				{
+					"name": "06 - Eliminar Jornada",
+					"_postman_id": "7a237e4e-5555-4868-ad22-3a2acd55d9ec",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGVsbGlkb3MiOiJHb2RpbmV6IiwidXNlcl9uYW1lIjoibWdvZGluZXoiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiZXhwIjoxNjU3MTY5MTc1LCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlOIl0sImp0aSI6IjI3ZjRhOGI4LWEzMmItNGRhNC05YTgwLTNhNGU3NWVlMDU2MCIsImVtYWlsIjoibWdvZGluZXpAZ21haWwuY29tIiwiY2xpZW50X2lkIjoia2FsdW0tYXBwIiwibm9tYnJlcyI6Im1hcmlhIn0.O0nHfiTtqDtyR48cRHyd1r6eJvt6YQo-U8Yx5qRhY7Q"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:9000/kalum-management/v1/jornada/dcd5e621-0e91-4285-a42f-f8dc5463bb8a"
+					},
+					"response": []
+				}
+			],
+			"_postman_id": "bc853aa5-e878-45fc-9317-0af7ee727199"
+		},
+		{
+			"name": "Inversion Carrera Tecnica",
+			"item": [
+				{
+					"name": "01 - Listar Inversiones de Carrereras Tecnicas",
+					"_postman_id": "03ec900f-86f5-46b4-977b-3563ffaf288e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGVsbGlkb3MiOiJHb2RpbmV6IiwidXNlcl9uYW1lIjoibWdvZGluZXpAa2FsdW0uZWR1Lmd0Iiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImV4cCI6MTY3NjQzNjM4MCwiYXV0aG9yaXRpZXMiOlsiUk9MRV9BRE1JTiJdLCJqdGkiOiIyY2RhZDU1Zi1iOGE2LTQ3ODMtYTJjNC00ZDk1MDBmYTkyNGUiLCJlbWFpbCI6Im1nb2RpbmV6QGdtYWlsLmNvbSIsImNsaWVudF9pZCI6ImthbHVtLWFwcCIsIm5vbWJyZXMiOiJtYXJpYSJ9.v1MbmDQ6hZKlPXnE86KZzp8tkYaxnsOdurz08fYouUw"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9000/kalum-management/v1/inversion-carreras-tecnicas"
+					},
+					"response": []
+				},
+				{
+					"name": "02 - Buscar Inversion Carrera Tecnica por ID",
+					"_postman_id": "0fcce776-c9fa-49d5-83d9-7597e96f6186",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGVsbGlkb3MiOiJHb2RpbmV6IiwidXNlcl9uYW1lIjoibWdvZGluZXoiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiZXhwIjoxNjU3MjYwMzE0LCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlOIl0sImp0aSI6ImE0MmYyNmMyLWRlN2UtNGY1Zi05ZjY0LTEwOThjM2Q1MGQyZSIsImVtYWlsIjoibWdvZGluZXpAZ21haWwuY29tIiwiY2xpZW50X2lkIjoia2FsdW0tYXBwIiwibm9tYnJlcyI6Im1hcmlhIn0.0ndUS_VCQuhMpcNhet-FQUAvmrZARtA90nYyojoVMGI"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9000/kalum-management/v1/inversion-carreras-tecnicas/6648687d-b55f-11ec-9105-0242ac110002"
+					},
+					"response": []
+				},
+				{
+					"name": "03 - Paginar Inversion Carrera Tecnica",
+					"_postman_id": "c4618446-6c37-4fe4-9b53-4b7a8f398f23",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGVsbGlkb3MiOiJHb2RpbmV6IiwidXNlcl9uYW1lIjoibWdvZGluZXoiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiZXhwIjoxNjU3MjYwMzE0LCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlOIl0sImp0aSI6ImE0MmYyNmMyLWRlN2UtNGY1Zi05ZjY0LTEwOThjM2Q1MGQyZSIsImVtYWlsIjoibWdvZGluZXpAZ21haWwuY29tIiwiY2xpZW50X2lkIjoia2FsdW0tYXBwIiwibm9tYnJlcyI6Im1hcmlhIn0.0ndUS_VCQuhMpcNhet-FQUAvmrZARtA90nYyojoVMGI"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9000/kalum-management/v1/inversion-carreras-tecnicas/page/0"
+					},
+					"response": []
+				},
+				{
+					"name": "04 - Agregar Nueva Inversion Carrera Tecnica",
+					"_postman_id": "4c72a3b3-b0b6-4386-aa0c-c952ed04a2b6",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGVsbGlkb3MiOiJHb2RpbmV6IiwidXNlcl9uYW1lIjoibWdvZGluZXoiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiZXhwIjoxNjU3Mzk5MjU3LCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlOIl0sImp0aSI6ImFmNjlmYjAwLTVjZTMtNGVlMS05M2IzLThjMWMyMzU1NzUyMyIsImVtYWlsIjoibWdvZGluZXpAZ21haWwuY29tIiwiY2xpZW50X2lkIjoia2FsdW0tYXBwIiwibm9tYnJlcyI6Im1hcmlhIn0.ObcHEkfpzPhmGJhyYGn12Xr_CB4D3ckDesHGA8PFqjw"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"carreraId\": \"86d6ae28-c344-11ec-b235-0242ac110002\",\r\n    \"montoInscripcion\": \"1500.00\",\r\n    \"numeroPagos\": 8,\r\n    \"montoPagos\": \"800.00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9000/kalum-management/v1/inversion-carreras-tecnicas"
+					},
+					"response": []
+				},
+				{
+					"name": "05 - Actualizar Inversion Carrera Tecnica",
+					"_postman_id": "14f68e22-bfba-430a-8979-f5d8f492ed6e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGVsbGlkb3MiOiJHb2RpbmV6IiwidXNlcl9uYW1lIjoibWdvZGluZXoiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiZXhwIjoxNjU3MjYxNzc0LCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlOIl0sImp0aSI6IjBiNmZjOGYwLTg5M2MtNDdlYi1hMTQ4LTJlY2U0YThhZjA5NiIsImVtYWlsIjoibWdvZGluZXpAZ21haWwuY29tIiwiY2xpZW50X2lkIjoia2FsdW0tYXBwIiwibm9tYnJlcyI6Im1hcmlhIn0.jIK0UUlAnqZk245VGrJu5BwvQQxlUGAdxCBx1gRNItA"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"montoInscripcion\": \"1500.00\",\r\n    \"numeroPagos\": 9,\r\n    \"montoPagos\": \"750.00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9000/kalum-management/v1/inversion-carreras-tecnicas/6648687d-b55f-11ec-9105-0242ac110002"
+					},
+					"response": []
+				},
+				{
+					"name": "06 - Eliminar Inversion Carrera Tecnica",
+					"_postman_id": "e41d4fe7-c7af-4ac0-a276-5dae99ab9d75",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGVsbGlkb3MiOiJHb2RpbmV6IiwidXNlcl9uYW1lIjoibWdvZGluZXoiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiZXhwIjoxNjU3MjU2MDI2LCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlOIl0sImp0aSI6IjQ2NmIwYzMzLTI1ZmUtNDBiNi05OGY4LWMwNDZiODM1YWVmMyIsImVtYWlsIjoibWdvZGluZXpAZ21haWwuY29tIiwiY2xpZW50X2lkIjoia2FsdW0tYXBwIiwibm9tYnJlcyI6Im1hcmlhIn0.P7xqLoFQkq9p_O3hubGrz9rZ5OP5zGCzqIwZ7d9ucdU"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:9000/kalum-management/v1"
+					},
+					"response": []
+				}
+			],
+			"_postman_id": "53c43796-ad29-4853-96e2-990e44a9bad5"
+		},
+		{
+			"name": "Examen de Admision",
+			"item": [
+				{
+					"name": "01 - Listar Examenes de Admison",
+					"_postman_id": "923e6567-4c2e-4163-8fe5-d622fce287fd",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGVsbGlkb3MiOiJHb2RpbmV6IiwidXNlcl9uYW1lIjoibWdvZGluZXoiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiZXhwIjoxNjU3MTcxNjI3LCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlOIl0sImp0aSI6ImNmY2ZkODgyLTMxYzgtNDJjYi1hMGI4LTQ2MzA0ZmQ5MzljNiIsImVtYWlsIjoibWdvZGluZXpAZ21haWwuY29tIiwiY2xpZW50X2lkIjoia2FsdW0tYXBwIiwibm9tYnJlcyI6Im1hcmlhIn0.ozoCx8N_DhHlIR_xiBuf2NDo6CT55IuOcOf6drD9M1U"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9000/kalum-management/v1/examen-admision"
+					},
+					"response": []
+				},
+				{
+					"name": "02 - Buscar Examen de Admision por ID",
+					"_postman_id": "f887a3fe-481c-40d6-9df6-f0047ecdd593",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGVsbGlkb3MiOiJHb2RpbmV6IiwidXNlcl9uYW1lIjoibWdvZGluZXoiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiZXhwIjoxNjU3MTY3MDAxLCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlOIl0sImp0aSI6ImVmZTViNDAxLWI2YzktNDhmMC04MzhjLWRkN2I5NWYyZDA0NCIsImVtYWlsIjoibWdvZGluZXpAZ21haWwuY29tIiwiY2xpZW50X2lkIjoia2FsdW0tYXBwIiwibm9tYnJlcyI6Im1hcmlhIn0.RmH47HKiQoa662qt8cF83sN7nDCRTV6DjpwxdNY9QHQ"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9000/kalum-management/v1/examen-admision/a0302568-b55e-11ec-9105-0242ac110002"
+					},
+					"response": []
+				},
+				{
+					"name": "03 - Paginar Examenes de Admision",
+					"_postman_id": "c022a260-ed4b-4b64-8911-fa74157c249f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGVsbGlkb3MiOiJHb2RpbmV6IiwidXNlcl9uYW1lIjoibWdvZGluZXoiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiZXhwIjoxNjU3MjQ3NDY5LCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlOIl0sImp0aSI6ImQ2ZThmMzFhLTU4MDUtNDAzOC1iNzE2LTQzYjQzNDc4YzlkMSIsImVtYWlsIjoibWdvZGluZXpAZ21haWwuY29tIiwiY2xpZW50X2lkIjoia2FsdW0tYXBwIiwibm9tYnJlcyI6Im1hcmlhIn0.Hg04m1SgZhjx6XtRXRvvKrADSVhKTR7daBsK7awnNLg"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9000/kalum-management/v1/examen-admision/page/0"
+					},
+					"response": []
+				},
+				{
+					"name": "04 - Agregar Nuevo Examen de Admision.",
+					"_postman_id": "ee102c4b-3d86-41b2-9259-51f1c4744d69",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGVsbGlkb3MiOiJHb2RpbmV6IiwidXNlcl9uYW1lIjoibWdvZGluZXoiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiZXhwIjoxNjU3MTcwNzgyLCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlOIl0sImp0aSI6IjM0ZTg2ODY1LTVmYWEtNDM5ZS1iNzk5LWY2NjE1Y2ZhMGY5OSIsImVtYWlsIjoibWdvZGluZXpAZ21haWwuY29tIiwiY2xpZW50X2lkIjoia2FsdW0tYXBwIiwibm9tYnJlcyI6Im1hcmlhIn0.LcqIDChYxUBxeb7VU1zp7YNcH-LPDAcD02k4Rp0pn38"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fechaExamen\": \"2022-06-02\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9000/kalum-management/v1/examen-admision"
+					},
+					"response": []
+				},
+				{
+					"name": "05 - Actualizar Examen de Admision",
+					"_postman_id": "e4ced105-0a1d-4657-8a0a-1e636f81951d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGVsbGlkb3MiOiJHb2RpbmV6IiwidXNlcl9uYW1lIjoibWdvZGluZXoiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiZXhwIjoxNjU3MTcyMDc5LCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlOIl0sImp0aSI6ImRiNTRjYWRmLTQwMjUtNDAwMi04MmQ1LWQyOGViZGM4OWQzOCIsImVtYWlsIjoibWdvZGluZXpAZ21haWwuY29tIiwiY2xpZW50X2lkIjoia2FsdW0tYXBwIiwibm9tYnJlcyI6Im1hcmlhIn0.OFjti6m7Z6Rj71f5yBCR6L7aCfukyz_a72gdXY_gkDg"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fechaExamen\": \"2022-02-02\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9000/kalum-management/v1/examen-admision/c28236fa-4906-48a0-882f-cbad226ed6ee"
+					},
+					"response": []
+				},
+				{
+					"name": "06 - Eliminar Examen de Admision",
+					"_postman_id": "aee3b7b3-d550-4134-959e-297bf7021a01",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGVsbGlkb3MiOiJHb2RpbmV6IiwidXNlcl9uYW1lIjoibWdvZGluZXoiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiZXhwIjoxNjU3MTcyMDc5LCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlOIl0sImp0aSI6ImRiNTRjYWRmLTQwMjUtNDAwMi04MmQ1LWQyOGViZGM4OWQzOCIsImVtYWlsIjoibWdvZGluZXpAZ21haWwuY29tIiwiY2xpZW50X2lkIjoia2FsdW0tYXBwIiwibm9tYnJlcyI6Im1hcmlhIn0.OFjti6m7Z6Rj71f5yBCR6L7aCfukyz_a72gdXY_gkDg"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:9000/kalum-management/v1/examen-admision/8776cb7a-46b3-412b-8e23-bd9810975508"
+					},
+					"response": []
+				}
+			],
+			"_postman_id": "4160d8d8-b6e8-4f0c-b3fe-d8210d943f68"
+		},
+		{
+			"name": "Cargo",
+			"item": [
+				{
+					"name": "01 - Listar Cargos",
+					"_postman_id": "1cc3b92d-2c56-4870-87a3-468e830a2f90",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGVsbGlkb3MiOiJHb2RpbmV6IiwidXNlcl9uYW1lIjoibWdvZGluZXoiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiZXhwIjoxNjU3MjU1MDA0LCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlOIl0sImp0aSI6IjJkYzc4NmQxLWZlNGQtNDE0ZC1iMzBkLTAxMjFiNmNiMjE4ZSIsImVtYWlsIjoibWdvZGluZXpAZ21haWwuY29tIiwiY2xpZW50X2lkIjoia2FsdW0tYXBwIiwibm9tYnJlcyI6Im1hcmlhIn0.SJowjPTqhOBK9gUXnn9B_SY3IsT7JSaLwmFAW25_Xts"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9000/kalum-management/v1/cargo"
+					},
+					"response": []
+				},
+				{
+					"name": "02 - Buscar Cargo por Id",
+					"_postman_id": "e2448be3-211b-4a6b-b079-5ef6693f02ab",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9000/kalum-management/v1/cargo/3d292428-b563-11ec-9105-0242ac110002"
+					},
+					"response": []
+				},
+				{
+					"name": "03 - Paginar Cargos",
+					"_postman_id": "4d6b6b80-9145-4ec4-8773-19621781480e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGVsbGlkb3MiOiJHb2RpbmV6IiwidXNlcl9uYW1lIjoibWdvZGluZXoiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiZXhwIjoxNjU3MjU1MDA0LCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlOIl0sImp0aSI6IjJkYzc4NmQxLWZlNGQtNDE0ZC1iMzBkLTAxMjFiNmNiMjE4ZSIsImVtYWlsIjoibWdvZGluZXpAZ21haWwuY29tIiwiY2xpZW50X2lkIjoia2FsdW0tYXBwIiwibm9tYnJlcyI6Im1hcmlhIn0.SJowjPTqhOBK9gUXnn9B_SY3IsT7JSaLwmFAW25_Xts"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9000/kalum-management/v1/cargo/page/1"
+					},
+					"response": []
+				},
+				{
+					"name": "04 - Agregar Nuevo Cargo",
+					"_postman_id": "7abc6392-5132-48ae-9fd7-2ba0a4c6fe79",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGVsbGlkb3MiOiJHb2RpbmV6IiwidXNlcl9uYW1lIjoibWdvZGluZXoiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiZXhwIjoxNjU3MjU1MzEzLCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlOIl0sImp0aSI6IjU5MmFkMWY3LTc1ZmItNGQyZC1hZjE3LTYyNzUzZjE5N2E5MCIsImVtYWlsIjoibWdvZGluZXpAZ21haWwuY29tIiwiY2xpZW50X2lkIjoia2FsdW0tYXBwIiwibm9tYnJlcyI6Im1hcmlhIn0.LrK7lmfI6wffxLcmlc6eP_7--TaIPOsmShtgLX6Z6DE"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"descripcion\": \"PAGO DE UNIFORME\",\r\n    \"prefijo\": \"PGDU\",\r\n    \"monto\": 350.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9000/kalum-management/v1/cargo"
+					},
+					"response": []
+				},
+				{
+					"name": "05 - Actualizar Cargo",
+					"_postman_id": "5d181dfe-197b-4ceb-beeb-3948269ef803",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGVsbGlkb3MiOiJHb2RpbmV6IiwidXNlcl9uYW1lIjoibWdvZGluZXoiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiZXhwIjoxNjU3MjU1NjcxLCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlOIl0sImp0aSI6IjgxMmQxNjE3LTgyOWYtNDFmMS04ODhhLTYyZTk3Y2ExMThhOCIsImVtYWlsIjoibWdvZGluZXpAZ21haWwuY29tIiwiY2xpZW50X2lkIjoia2FsdW0tYXBwIiwibm9tYnJlcyI6Im1hcmlhIn0.Zoo8WmWn_Iv-08xacDazP2G_YofwfiMnJZkHn5HEa08"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"descripcion\": \"PAGO DE UNIFORME\",\r\n    \"prefijo\": \"UNIF\",\r\n    \"monto\": 480.00\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9000/kalum-management/v1/cargo/656873f6-02b0-44d4-8a5c-7f31fb4434c6"
+					},
+					"response": []
+				},
+				{
+					"name": "06 - Eliminar Cargo",
+					"_postman_id": "d30d5aad-06b5-4bb7-92a1-a4ee7018337f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGVsbGlkb3MiOiJHb2RpbmV6IiwidXNlcl9uYW1lIjoibWdvZGluZXoiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiZXhwIjoxNjU3MjU2MDI2LCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlOIl0sImp0aSI6IjQ2NmIwYzMzLTI1ZmUtNDBiNi05OGY4LWMwNDZiODM1YWVmMyIsImVtYWlsIjoibWdvZGluZXpAZ21haWwuY29tIiwiY2xpZW50X2lkIjoia2FsdW0tYXBwIiwibm9tYnJlcyI6Im1hcmlhIn0.P7xqLoFQkq9p_O3hubGrz9rZ5OP5zGCzqIwZ7d9ucdU"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": "http://localhost:9000/kalum-management/v1/cargo/656873f6-02b0-44d4-8a5c-7f31fb4434c6"
+					},
+					"response": []
+				}
+			],
+			"_postman_id": "a91d224d-bb82-4682-834b-e7a0e364ede0"
+		},
+		{
+			"name": "Aspirante",
+			"item": [
+				{
+					"name": "01 - Consulta de Aspirantes",
+					"_postman_id": "06db0021-5215-4b73-80c5-cd2a7e3c5b59",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGVsbGlkb3MiOiJHb2RpbmV6IiwidXNlcl9uYW1lIjoibWdvZGluZXoiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiZXhwIjoxNjU3MTY0MTU4LCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlOIl0sImp0aSI6IjA2ZDFlZTIxLTc1MDgtNGJkNy1hMGIyLWZiNjk2ZGRiYWQ2NSIsImVtYWlsIjoibWdvZGluZXpAZ21haWwuY29tIiwiY2xpZW50X2lkIjoia2FsdW0tYXBwIiwibm9tYnJlcyI6Im1hcmlhIn0.YLRL03VT76tuUZV7M4NtUER6Rxzmb7jokLOq6KyCBJw"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9000/kalum-management/v1/aspirante"
+					},
+					"response": []
+				},
+				{
+					"name": "02 - Consultar Aspirante por Pagina",
+					"_postman_id": "223ea60a-6ff5-446a-9a9e-d0f5c1b15b64",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGVsbGlkb3MiOiJHb2RpbmV6IiwidXNlcl9uYW1lIjoibWdvZGluZXoiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiZXhwIjoxNjU3MTU5ODE4LCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlOIl0sImp0aSI6IjQxZjVhYzk1LWRlYjktNDA3Yi1hY2IxLTJjNzFmY2IwZWZjYyIsImVtYWlsIjoibWdvZGluZXpAZ21haWwuY29tIiwiY2xpZW50X2lkIjoia2FsdW0tYXBwIiwibm9tYnJlcyI6Im1hcmlhIn0.5xZ_sYERptRVDx4ypLemcS3VkSQV9Gzk5qPeVG-kyKM"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9000/kalum-management/v1/aspirante/page/0"
+					},
+					"response": []
+				},
+				{
+					"name": "03 - Buscar Aspirante por No Expediente",
+					"_postman_id": "cbf94830-ca1f-4265-aa59-b4cb3fc898da",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9000/kalum-management/v1/aspirante/EXP-20220002"
+					},
+					"response": []
+				},
+				{
+					"name": "04 - Agregar un Expediente Nuevo",
+					"_postman_id": "347987f4-bca4-4581-a81c-d62c142d2778",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"noExpediente\": \"EXP-20220005\",\r\n    \"apellidos\": \"Gonzalez\",\r\n    \"nombres\": \"Marcos\",\r\n    \"direccion\": \"Guatemala, Mixco\",\r\n    \"telefono\": \"55545678\",\r\n    \"email\": \"MGonzalez@gmial.com\",\r\n    \"estatus\": \"No Asignado\",\r\n    \"carreraTecnica\": {\r\n        \"carreraId\": \"78c9619a-b55e-11ec-9105-0242ac110002\"\r\n    },\r\n    \"jornada\": {\r\n        \"jornadaId\": \"5ada1ded-b55e-11ec-9105-0242ac110002\"\r\n    },\r\n    \"examenAdmision\": {\r\n        \"examenId\": \"a0302568-b55e-11ec-9105-0242ac110002\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9000/kalum-management/v1/aspirante"
+					},
+					"response": []
+				},
+				{
+					"name": "05 - Actualizar Informacion del Aspirante",
+					"_postman_id": "b0e9d622-a676-4e73-b068-32bf56535d66",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"noExpediente\": \"EXP-20220001\",\r\n    \"apellidos\": \"Sanchez Rosales\",\r\n    \"nombres\": \"Eduardo\",\r\n    \"direccion\": \"Guatemala, zacapa\",\r\n    \"telefono\": \"5559999\",\r\n    \"email\": \"ESanchez@gmial.com\",\r\n    \"estatus\": \"No Asignado\",\r\n    \"carreraTecnica\": {\r\n        \"carreraId\": \"78c9619a-b55e-11ec-9105-0242ac110002\"\r\n    },\r\n    \"jornada\": {\r\n        \"jornadaId\": \"5ada1ded-b55e-11ec-9105-0242ac110002\"\r\n    },\r\n    \"examenAdmision\": {\r\n        \"examenId\": \"a0302568-b55e-11ec-9105-0242ac110002\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9000/kalum-management/v1/aspirante/EXP-20220001"
+					},
+					"response": []
+				},
+				{
+					"name": "06 - Eliminar un Aspirante",
+					"_postman_id": "520f617b-a1ef-4edd-91aa-720cafc1bba5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:9000/kalum-management/v1/aspirante/0d9fbbed-d7bc-4ab8-b690-34894425be78"
+					},
+					"response": []
+				}
+			],
+			"_postman_id": "ac137da5-d782-4c4d-9571-8e011bcc6a9b"
+		},
+		{
+			"name": "Inscripcion",
+			"item": [
+				{
+					"name": "01- crear solicitud de inscripcion",
+					"_postman_id": "973387ec-d040-4a0f-9487-236f61b8eccd",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGVsbGlkb3MiOiJHb2RpbmV6IiwidXNlcl9uYW1lIjoibWdvZGluZXoiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiZXhwIjoxNjY1NzIxODA0LCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlOIl0sImp0aSI6IjA3YjhmNTZhLWZlZTYtNDQzYi1hY2ExLWNlYmM0ZDAxMzIxYyIsImVtYWlsIjoibWdvZGluZXpAZ21haWwuY29tIiwiY2xpZW50X2lkIjoia2FsdW0tYXBwIiwibm9tYnJlcyI6Im1hcmlhIn0.pvdTX27DlsbjclvGMmeSjUUZ18PGb1b9m0MdgFxJaiY"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"noExpediente\": \"EXP-20220001\",\r\n    \"ciclo\": \"2022\",\r\n    \"mesInicioPago\": 2,\r\n    \"carreraId\": \"86d6ae28-c344-11ec-b235-0242ac110002\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9000/kalum-management/v1/inscripciones/enrollment"
+					},
+					"response": []
+				},
+				{
+					"name": "02 - Mostrar Inscripcion por Id",
+					"_postman_id": "3bc14fe0-6119-442b-a6ea-c42b08be07f5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGVsbGlkb3MiOiJHb2RpbmV6IiwidXNlcl9uYW1lIjoibWdvZGluZXoiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiZXhwIjoxNjU3MTYyNzI2LCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlOIl0sImp0aSI6IjI5MTg5MjNiLWYxZDQtNGM3OS05MzA0LTQ1NGJjM2I3NWI1NyIsImVtYWlsIjoibWdvZGluZXpAZ21haWwuY29tIiwiY2xpZW50X2lkIjoia2FsdW0tYXBwIiwibm9tYnJlcyI6Im1hcmlhIn0.I86karaIY8MAhu40qnSW_ZbERa_NvBXkFR1wMsi7uGk"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9000/kalum-management/v1/inscripciones/26dc1477-fcf2-11ec-925f-0242ac110002"
+					},
+					"response": []
+				},
+				{
+					"name": "03 - Listar Inscripciones",
+					"_postman_id": "f0303517-3adf-405b-a88d-21093d502766",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGVsbGlkb3MiOiJHb2RpbmV6IiwidXNlcl9uYW1lIjoibWdvZGluZXoiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiZXhwIjoxNjU3MzQxNTMyLCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlOIl0sImp0aSI6IjNjYTMxMDhlLWI3NWItNDdiYS1hNGIzLTBjYzM2ZjUyOGZkZCIsImVtYWlsIjoibWdvZGluZXpAZ21haWwuY29tIiwiY2xpZW50X2lkIjoia2FsdW0tYXBwIiwibm9tYnJlcyI6Im1hcmlhIn0.ffjzeGNFas9DzSkAzwjbBEeSiTxQd7Jq-16z9Fgzsac"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9000/kalum-management/v1/inscripciones"
+					},
+					"response": []
+				},
+				{
+					"name": "04 - Paginar Inscripciones",
+					"_postman_id": "e7ec568f-0f9f-40d3-9d61-d8cce31ff700",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGVsbGlkb3MiOiJHb2RpbmV6IiwidXNlcl9uYW1lIjoibWdvZGluZXoiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiZXhwIjoxNjU3MjQ3NDY5LCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlOIl0sImp0aSI6ImQ2ZThmMzFhLTU4MDUtNDAzOC1iNzE2LTQzYjQzNDc4YzlkMSIsImVtYWlsIjoibWdvZGluZXpAZ21haWwuY29tIiwiY2xpZW50X2lkIjoia2FsdW0tYXBwIiwibm9tYnJlcyI6Im1hcmlhIn0.Hg04m1SgZhjx6XtRXRvvKrADSVhKTR7daBsK7awnNLg"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9000/kalum-management/v1/inscripciones/page/0"
+					},
+					"response": []
+				},
+				{
+					"name": "05 - Eliminar Inscripcion por Id",
+					"_postman_id": "bdadc68f-9ea3-40b9-8309-4ea881abaf2b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGVsbGlkb3MiOiJHb2RpbmV6IiwidXNlcl9uYW1lIjoibWdvZGluZXoiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiZXhwIjoxNjU3MzQxNTMyLCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlOIl0sImp0aSI6IjNjYTMxMDhlLWI3NWItNDdiYS1hNGIzLTBjYzM2ZjUyOGZkZCIsImVtYWlsIjoibWdvZGluZXpAZ21haWwuY29tIiwiY2xpZW50X2lkIjoia2FsdW0tYXBwIiwibm9tYnJlcyI6Im1hcmlhIn0.ffjzeGNFas9DzSkAzwjbBEeSiTxQd7Jq-16z9Fgzsac"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:9000/kalum-management/v1/inscripciones/1ef46410-ff39-11ec-b4b0-0242ac110003"
+					},
+					"response": []
+				}
+			],
+			"_postman_id": "20fe934e-194a-476c-9640-76b568f83dd6"
+		},
+		{
+			"name": "Alumno",
+			"item": [
+				{
+					"name": "01 - Listar Alumnos",
+					"_postman_id": "96a31cf4-1cc5-433c-a17f-42e27f86a8bd",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGVsbGlkb3MiOiJHb2RpbmV6IiwidXNlcl9uYW1lIjoibWdvZGluZXoiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiZXhwIjoxNjY2NDY5ODI0LCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlOIl0sImp0aSI6ImVlNTVjNDNiLWEzMDQtNGZmMC1hYTM0LWM1NDhmM2Y5YzA0YSIsImVtYWlsIjoibWdvZGluZXpAZ21haWwuY29tIiwiY2xpZW50X2lkIjoia2FsdW0tYXBwIiwibm9tYnJlcyI6Im1hcmlhIn0.TeaPSwjz0XqAMYx3S501Ip0uFvuIXLJZMY88Qkswke0"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9000/kalum-management/v1/alumno"
+					},
+					"response": []
+				},
+				{
+					"name": "02 - Buscar Alumno por Id",
+					"_postman_id": "87052847-77c6-406f-b097-0e04e645f7db",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9000/kalum-management/v1/alumno/20220005"
+					},
+					"response": []
+				},
+				{
+					"name": "03  - Paginar Alumnos",
+					"_postman_id": "c2dd06c0-34be-4969-a004-aa1048079584",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGVsbGlkb3MiOiJHb2RpbmV6IiwidXNlcl9uYW1lIjoibWdvZGluZXoiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiZXhwIjoxNjU3MTY2NTQ2LCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlOIl0sImp0aSI6IjAyYjhjYzFmLWViZjgtNDJlMy1hNTU0LTkzZGZjNjc5YTdhNyIsImVtYWlsIjoibWdvZGluZXpAZ21haWwuY29tIiwiY2xpZW50X2lkIjoia2FsdW0tYXBwIiwibm9tYnJlcyI6Im1hcmlhIn0.X4Cj21-ynImpRGO_lQnm8lL--LHBY2xAxQwf10UDatQ"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9000/kalum-management/v1/alumno/page/0"
+					},
+					"response": []
+				},
+				{
+					"name": "04 -Actualizar Alumno",
+					"_postman_id": "2db4e17c-63a5-4339-b7cb-830e1c1d24df",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGVsbGlkb3MiOiJHb2RpbmV6IiwidXNlcl9uYW1lIjoibWdvZGluZXoiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiZXhwIjoxNjU3MjQ3NDY5LCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlOIl0sImp0aSI6ImQ2ZThmMzFhLTU4MDUtNDAzOC1iNzE2LTQzYjQzNDc4YzlkMSIsImVtYWlsIjoibWdvZGluZXpAZ21haWwuY29tIiwiY2xpZW50X2lkIjoia2FsdW0tYXBwIiwibm9tYnJlcyI6Im1hcmlhIn0.Hg04m1SgZhjx6XtRXRvvKrADSVhKTR7daBsK7awnNLg"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"apellidos\": \"Godinez Godoy\",\r\n    \"nombres\": \"Armando\",\r\n    \"direccion\": \"Peten, flores\",\r\n    \"telefono\": \"44225566\",\r\n    \"email\": \"AGodinezG@Hotmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9000/kalum-management/v1/alumno/20220001"
+					},
+					"response": []
+				},
+				{
+					"name": "05 - Eliminar Alumno",
+					"_postman_id": "3bf8f415-bf15-4b39-b31a-472257617739",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGVsbGlkb3MiOiJHb2RpbmV6IiwidXNlcl9uYW1lIjoibWdvZGluZXoiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiZXhwIjoxNjU3MzQxNTMyLCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlOIl0sImp0aSI6IjNjYTMxMDhlLWI3NWItNDdiYS1hNGIzLTBjYzM2ZjUyOGZkZCIsImVtYWlsIjoibWdvZGluZXpAZ21haWwuY29tIiwiY2xpZW50X2lkIjoia2FsdW0tYXBwIiwibm9tYnJlcyI6Im1hcmlhIn0.ffjzeGNFas9DzSkAzwjbBEeSiTxQd7Jq-16z9Fgzsac"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:9000/kalum-management/v1/alumno/20220034"
+					},
+					"response": []
+				}
+			],
+			"_postman_id": "512a2d7f-4785-4b82-a1c2-2121f31bcccf"
+		},
+		{
+			"name": "Servicios Soap",
+			"item": [
+				{
+					"name": "01 - proceso de inscipcion Soap",
+					"_postman_id": "cb779c8a-4d26-413a-b260-bad7f81f7f27",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\"\r\n\txmlns:bean=\"http://beans.core.enrollment.kalum.edu/\">\r\n    <soapenv:Header />\r\n    <soapenv:Body>\r\n        <bean:enrollmentProcess>\r\n            <!--Optional:-->\r\n            <arg0>\r\n                <!--Optional:-->\r\n                <carreraId>78c9619a-b55e-11ec-9105-0242ac110002</carreraId>\r\n                <!--Optional:-->\r\n                <ciclo>2022</ciclo>\r\n                <mesInicioPago>2</mesInicioPago>\r\n                <!--Optional:-->\r\n                <noExpediente>EXP-20220001</noExpediente>\r\n            </arg0>\r\n        </bean:enrollmentProcess>\r\n    </soapenv:Body>\r\n</soapenv:Envelope>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": "http://desktop-88t99hj:8080/EnrollmentServiceImplService/EnrollmentServiceImpl"
+					},
+					"response": []
+				}
+			],
+			"_postman_id": "3ca140c1-4f71-4ec8-aacc-0a8e1d163b39"
+		}
+	]
+}
